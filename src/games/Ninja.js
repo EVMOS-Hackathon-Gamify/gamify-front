@@ -36,7 +36,7 @@ export default function Ninja() {
     const fallingSpeed = 2;
     
     const heroWidth = 17; // 24
-    const heroHeight = 30; // 40)
+    const heroHeight = 30; // 40);
 
     const [heroX, setHeroX] = useState(null)
     const [heroY, setHeroY] = useState(null)
