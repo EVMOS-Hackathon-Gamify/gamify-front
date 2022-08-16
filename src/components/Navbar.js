@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from "react-router-dom";
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure } from '@chakra-ui/react'
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, useDisclosure } from '@chakra-ui/react'
 import { FaWallet } from 'react-icons/fa'
 import { MdClear } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
+
+import logo from '../assets/images/logo.png'
 
 
 export default function Navbar() {
@@ -22,7 +24,7 @@ export default function Navbar() {
       <header className={`${currentUrl == '/' ? 'absolute' : 'relative'} h-24 w-screen bg-[#0a1f2f] flex items-center`}>
         <div className="xl:container w-full xl:px-20 md:px-12 px-4 mx-auto flex justify-between items-center">
           <Link to="/">
-            <img className="h-12" src="https:demo.thetork.com/html/torkgo/assets/images/logo/logo.png" alt="img" />
+            <img className="h-12" src={logo} alt="img" />
           </Link>
           <div className="hidden md:flex items-center text-white space-x-8 font-semibold font-body text-lg">
             <Link to="/">HOME</Link>
