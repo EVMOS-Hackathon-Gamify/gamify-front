@@ -37,6 +37,10 @@ export default function HomePage() {
     const [cardHeight, setCardHeight] = useState(null)
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+    
+    useEffect(() => {
         if (elemRef.current) {
             setCardHeight(elemRef.current?.clientHeight)
         }

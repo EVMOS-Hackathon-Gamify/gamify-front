@@ -8,6 +8,8 @@ import Ninja from "./games/Ninja";
 import Layout from './Layout';
 import LeaderBoard from './pages/LeaderBoard';
 import GamePage from './pages/Game';
+import Trade from './pages/Trade';
+import Generate from './pages/Generate';
 
 
 function App() {
@@ -19,7 +21,9 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="games" element={<Ninja />} />
+            <Route path="trade" element={<Trade />} />
             <Route path="leader-board" element={<LeaderBoard />} />
+            <Route path="generate" element={<Generate />} />
             <Route path="games">
               <Route path=":gameId" element={<GamePage />} />
             </Route>

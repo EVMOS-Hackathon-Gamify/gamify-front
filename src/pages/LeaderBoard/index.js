@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IoCaretUpOutline, IoCaretDownOutline } from 'react-icons/io5'
 import { AiOutlineMinus } from 'react-icons/ai'
 
@@ -6,6 +6,11 @@ import Footer from '../../components/Footer'
 
 
 export default function LeaderBoard() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+    
     return (
         <div className="w-full bg-[#02121d]">
             <div style={{ backgroundImage: `url(https://demo.thetork.com/html/torkgo/assets/images/header/bg.jpg)` }} className="h-[20rem] w-screen flex flex-col items-center justify-center font-body text-white space-y-6">

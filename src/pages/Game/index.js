@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { ethers } from "ethers";
 import { useParams } from "react-router-dom";
 import { BiWindows } from 'react-icons/bi'
 import { FaProjectDiagram, FaRoad, FaUserAstronaut } from 'react-icons/fa'
@@ -6,9 +7,47 @@ import { FaProjectDiagram, FaRoad, FaUserAstronaut } from 'react-icons/fa'
 import Footer from '../../components/Footer';
 
 
+const privateKey1 = "8df38f7a48aee08eb4b9067d760fd4dcb65772f4e34d63165021942d95650769";
+const account1 = "0x9E30A576f8dC62D76d01aD88aCe336451409D548";
+
+const ardmAddress = "0x59a2BD032B0a69D36F4a26939581C117eF803079";
+const ardmAbi = [
+    "function name() view returns (string)",
+    "function symbol() view returns (string)",
+    "function decimals() view returns (uint8)",
+    "function balanceOf(address) view returns (uint)",
+    "function totalSupply() view returns (uint256)",
+    "function transfer(address to, uint amount)",
+    "function mint(address to, uint256 amount)",
+];
+
 export default function GamePage() {
 
     let { gameId } = useParams()
+
+    const [provider, setProvider] = useState(null)
+    const [signer, setSigner] = useState(null)
+    const [balance, setBalance] = useState(0)
+    const [score, setScore] = useState(0)
+
+    async function mintArdmToAccount() {
+        const ardmContract = new ethers.Contract(ardmAddress, ardmAbi, provider);
+        ardmContract.connect(signer).mint(account1, parseInt(score))
+        const myBalance = await ardmContract.balanceOf(account1);
+    }
+
+    async function getBalance() {
+        const ardmContract = new ethers.Contract(ardmAddress, ardmAbi, provider);
+        const balance = await ardmContract.balanceOf(account1)
+        setBalance(balance / 1e6)
+    }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        let tempProvider = new ethers.providers.Web3Provider(window.ethereum)
+        setProvider(tempProvider)
+        setSigner(tempProvider.getSigner())
+    }, [])
 
     return (
         <div className="w-full bg-[#02121d] text-white font-body">
@@ -17,6 +56,20 @@ export default function GamePage() {
                 <p className="text-lg text-white/80">Home - Game Details</p>
             </div>
             <div className="container mx-auto px-20 py-28 space-y-20">
+                <div className="w-full rounded bg-[#0a1f2f] p-10 flex space-x-20">
+                    <div className="flex items-center space-x-4">
+                        <input onChange={(e) => setScore(e.target.value)} className="bg-black py-1 px-3 rounded h-8" placeholder="score" value={score} />
+                        <button onClick={() => mintArdmToAccount()} className="bg-[#28dbd1] text-[#0a1f2f] hover:text-[#28dbd1] hover:border-[#28dbd1] hover:skew-x-0 duration-300 border border-transparent hover:bg-[#0a1f2f] font-semibold h-8 w-20 rounded -skew-x-6">
+                            MINT
+                        </button>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                        <p className="text-white font-semibold text-lg">{balance} ETH</p>
+                        <button onClick={() => getBalance()} className="bg-[#28dbd1] text-[#0a1f2f] hover:text-[#28dbd1] hover:border-[#28dbd1] hover:skew-x-0 duration-300 border border-transparent hover:bg-[#0a1f2f] font-semibold h-8 w-20 rounded -skew-x-6">
+                            BALANCE
+                        </button>
+                    </div>
+                </div>
                 <div className="w-full rounded bg-[#0a1f2f] p-10 flex space-x-20 items-stretch">
                     <div className="w-3/5 flex flex-col space-y-8">
                         <div className="flex items-start space-x-6">
