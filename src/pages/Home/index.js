@@ -4,6 +4,8 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 
 import background from '../../assets/images/bg.png'
 import rocket from '../../assets/images/rocket.png'
+import game1 from '../../assets/images/game1.png'
+import littleImg1 from '../../assets/images/littleImg1.png'
 import img1 from '../../assets/images/img1.jpg'
 import img2 from '../../assets/images/img2.jpg'
 import titleImg1 from '../../assets/images/titleImg1.png'
@@ -118,22 +120,22 @@ export default function HomePage() {
                     <Slider {...settings} className="lg:w-2/3 w-full">
                         <div className="w-1/2 flex justify-start">
                             <div className="md:w-11/12 h-[35rem] bg-[#0a1f2f]">
-                                <GameCard gameId={1} bgImage={img1} titleImage={titleImg2} txt1="Public" txt2="42" txt3="TBA" />
+                                <GameCard slug={"stick-hero"} bgImage={game1} titleImage={littleImg1} gameName="Stick Hero" txt1="Public" txt2="42" txt3="TBA" />
                             </div>
                         </div>
                         <div className="w-1/2 flex justify-end">
                             <div className="md:w-11/12 h-[35rem] bg-[#0a1f2f]">
-                                <GameCard gameId={2} bgImage={img2} titleImage={titleImg1} txt1="Private" txt2="37" txt3="NAS" />
+                                <GameCard slug={"torkgo"} bgImage={img2} titleImage={titleImg1} gameName="Torkgo" txt1="Private" txt2="37" txt3="NAS" />
                             </div>
                         </div>
                         <div className="w-1/2">
                             <div className="md:w-11/12 h-[35rem] bg-[#0a1f2f]">
-                                <GameCard gameId={3} bgImage={img1} titleImage={titleImg2} txt1="Public" txt2="42" txt3="TBA" />
+                                <GameCard slug={"football"} bgImage={img1} titleImage={titleImg2} gameName="Football" txt1="Public" txt2="42" txt3="TBA" />
                             </div>
                         </div>
                         <div className="md:w-1/2">
                             <div className="w-11/12 h-[35rem] bg-[#0a1f2f]">
-                                <GameCard gameId={4} bgImage={img2} titleImage={titleImg1} txt1="Private" txt2="37" txt3="NAS" />
+                                <GameCard slug={"bounce-bounce"} bgImage={img2} titleImage={titleImg1} gameName="Bounce bounce" txt1="Private" txt2="37" txt3="NAS" />
                             </div>
                         </div>
                     </Slider>
