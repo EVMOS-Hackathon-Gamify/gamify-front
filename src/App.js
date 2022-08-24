@@ -4,13 +4,13 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
-import Ninja from "./games/a";
 import Layout from './Layout';
 import LeaderBoard from './pages/LeaderBoard';
 import Trade from './pages/Trade';
 import Generate from './pages/Generate';
-import SingleGame from './pages/Game/SingleGame';
 import GamePage from './pages/Game';
+import NinjaGame from './pages/Game/Game';
+import GameDetails from './pages/Game/GameDetails';
 
 
 function App() {
@@ -26,9 +26,9 @@ function App() {
             <Route path="generate" element={<Generate />} />
             <Route path="games" element={<GamePage />} />
             <Route path="games">
-              <Route path=":gameName" element={<SingleGame />} />
+              <Route path=":gameName" element={<GameDetails />} />
               <Route path=":gameName">
-                <Route path=":slug" element={<Ninja />} />
+                <Route path=":slug" element={<NinjaGame />} />
               </Route>
             </Route>
           </Route>

@@ -15,14 +15,14 @@ export default function GamePage() {
                 <h1 className="text-5xl font-bold">Games</h1>
                 <p className="text-lg text-white/80">Home - Games</p>
             </div>
-            <div className="container mx-auto px-20 py-28 flex justify-between space-x-10">
-                <div className="w-1/3 h-[35rem] bg-[#0a1f2f]">
+            <div className="xl:container mx-auto xl:px-20 md:px-12 px-4 py-28 flex flex-wrap justify-between space-y-6 sm:space-y-0">
+                <div className="w-full sm:w-[48%] lg:w-[30%] h-[35rem] bg-[#0a1f2f]">
                     <GameCard slug={"stick-hero"} bgImage={game1} titleImage={littleImg1} gameName="Stick Hero" txt1="Public" txt2="42" txt3="TBA" />
                 </div>
-                <div className="w-1/3 h-[35rem] bg-[#0a1f2f]">
+                <div className="w-full sm:w-[48%] lg:w-[30%] h-[35rem] bg-[#0a1f2f]">
                     <GameCard slug={"football"} bgImage={img1} titleImage={titleImg2} gameName="Football" txt1="Public" txt2="42" txt3="TBA" />
                 </div>
-                <div className="w-1/3">
+                <div className="w-full sm:w-[48%] lg:w-[30%]">
                 </div>
             </div>
             <Footer />

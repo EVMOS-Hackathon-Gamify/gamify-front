@@ -79,26 +79,28 @@ export default function HomePage() {
         initialSlide: 0,
         responsive: [
             {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
+                breakpoint: 500,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
             },
           ]
     }
 
     return (
         <div className="w-full">
-            <div style={{ backgroundImage: `url(${background})`  }} className="object-cover h-screen w-screen flex items-center">
-                <div className="h-full xl:container xl:px-20 md:px-12 px-4 mx-auto flex flex-col md:flex-row items-center justify-between space-y-20 md:space-y-0">
-                    <div className="w-1/2 text-white font-body md:w-1/3 space-y-6">
-                        <h1 className="uppercase font-bold lg:text-7xl md:text-5xl text-3xl">web 3.0 launchpad for igo & ido</h1>
-                        <p className="font-medium lg:text-lg">The next generation gaming ecosystem for IGOs and IDO launchpad web 3.0 platform </p>
-                        <button className="bg-[#28dbd1] text-[#0a1f2f] hover:text-[#28dbd1] hover:border-[#28dbd1] hover:skew-x-0 duration-300 border border-transparent hover:bg-[#0a1f2f] font-semibold text-lg h-14 px-8 rounded -skew-x-6">Explore IGO</button>
+            <div style={{ backgroundImage: `url(${background})`  }} className="object-cover lg:h-screen w-screen py-20 lg:py-0">
+                <div className="h-full xl:container xl:px-20 md:px-12 px-4 mx-auto flex flex-col md:flex-row items-center space-y-20 md:space-y-0">
+                    <div className="w-full md:w-1/2 text-white font-body">
+                        <div className="w-full xl:w-2/3 space-y-6">
+                            <h1 className="uppercase font-bold lg:text-7xl md:text-5xl text-4xl">web 3.0 launchpad for igo & ido</h1>
+                            <p className="font-medium lg:text-lg">The next generation gaming ecosystem for IGOs and IDO launchpad web 3.0 platform </p>
+                            <button className="bg-[#28dbd1] text-[#0a1f2f] hover:text-[#28dbd1] hover:border-[#28dbd1] hover:skew-x-0 duration-300 border border-transparent hover:bg-[#0a1f2f] font-semibold text-lg h-14 px-8 rounded -skew-x-6">Explore IGO</button>
+                        </div>
                     </div>
-                    <div className="w-1/4 flex justify-center items-end animate-bounce-slow">
-                        <img className="object-contain" src={rocket} alt="img" />
+                    <div className="hidden md:w-1/2 md:flex justify-center items-end xl:animate-bounce-slow">
+                        <img className="xl:w-1/2 w-2/3 object-contain" src={rocket} alt="img" />
                     </div>
                 </div>
             </div>
@@ -119,21 +121,21 @@ export default function HomePage() {
                     </div>
                     <Slider {...settings} className="lg:w-2/3 w-full">
                         <div className="w-1/2 flex justify-start">
-                            <div className="md:w-11/12 h-[35rem] bg-[#0a1f2f]">
+                            <div className="w-11/12 h-[35rem] bg-[#0a1f2f]">
                                 <GameCard slug={"stick-hero"} bgImage={game1} titleImage={littleImg1} gameName="Stick Hero" txt1="Public" txt2="42" txt3="TBA" />
                             </div>
                         </div>
                         <div className="w-1/2 flex justify-end">
-                            <div className="md:w-11/12 h-[35rem] bg-[#0a1f2f]">
+                            <div className="w-11/12 h-[35rem] bg-[#0a1f2f]">
                                 <GameCard slug={"torkgo"} bgImage={img2} titleImage={titleImg1} gameName="Torkgo" txt1="Private" txt2="37" txt3="NAS" />
                             </div>
                         </div>
                         <div className="w-1/2">
-                            <div className="md:w-11/12 h-[35rem] bg-[#0a1f2f]">
+                            <div className="w-11/12 h-[35rem] bg-[#0a1f2f]">
                                 <GameCard slug={"football"} bgImage={img1} titleImage={titleImg2} gameName="Football" txt1="Public" txt2="42" txt3="TBA" />
                             </div>
                         </div>
-                        <div className="md:w-1/2">
+                        <div className="w-1/2">
                             <div className="w-11/12 h-[35rem] bg-[#0a1f2f]">
                                 <GameCard slug={"bounce-bounce"} bgImage={img2} titleImage={titleImg1} gameName="Bounce bounce" txt1="Private" txt2="37" txt3="NAS" />
                             </div>
@@ -266,23 +268,23 @@ export default function HomePage() {
                 <div className="xl:container xl:px-20 md:px-12 px-4 mx-auto h-full w-full md:py-20 py-10 font-body flex flex-col items-center">
                     <p className="text-[#28dbd1] font-semibold md:text-2xl text-lg">Team</p>
                     <h1 className="text-white font-bold md:text-5xl text-2xl text-center">Meet the Crew</h1>
-                    <div className="pt-10 flex flex-wrap lg:flex-nowrap items-center justify-between lg:space-x-6 space-y-6 md:space-y-0">
-                        <div className="md:w-[48%] md:mr-2 md:mb-5 lg:m-0">
+                    <div className="pt-10 flex flex-wrap lg:flex-nowrap items-center justify-between lg:space-x-6">
+                        <div className="md:w-[48%] md:mr-2 mb-5 lg:m-0">
                             <MemberCard id="1" toggle={toggleHoverMemberCard} isHover={isHoveredMember}
                                 name="Alex Mike" profession="Founder" img={memberImg1}
                             />
                         </div>
-                        <div className="md:w-[48%] md:ml-2 md:mb-5 lg:m-0">
+                        <div className="md:w-[48%] md:ml-2 mb-5 lg:m-0">
                             <MemberCard id="2" toggle={toggleHoverMemberCard} isHover={isHoveredMember}
                                 name="David Vice" profession="Founder" img={memberImg1}
                             />
                         </div>
-                        <div className="md:w-[48%] md:mr-2 md:mt-5 lg:m-0">
+                        <div className="md:w-[48%] md:mr-2 mt-5 lg:m-0">
                             <MemberCard id="3" toggle={toggleHoverMemberCard} isHover={isHoveredMember}
                                 name="Young Jong" profession="Founder" img={memberImg1}
                             />
                         </div>
-                        <div className="md:w-[48%] md:ml-2 md:mt-5 lg:m-0">
+                        <div className="md:w-[48%] md:ml-2 mt-5 lg:m-0">
                             <MemberCard id="4" toggle={toggleHoverMemberCard} isHover={isHoveredMember}
                                 name="David Dzue" profession="Founder" img={memberImg1}
                             />

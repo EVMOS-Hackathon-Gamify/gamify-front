@@ -9,8 +9,8 @@ export default function Generate() {
                 <h1 className="text-5xl font-bold">Generate</h1>
                 <p className="text-lg text-white/80">Home - Generate</p>
             </div>
-            <div className="container mx-auto px-20 py-20 text-white font-body">
-                <div className="w-2/5 mx-auto bg-[#0a1f2f] rounded p-6 space-y-6">
+            <div className="xl:container mx-auto xl:px-20 md:px-12 px-4 py-20 text-white font-body">
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 mx-auto bg-[#0a1f2f] rounded p-6 space-y-6">
                     <div className="space-y-2">
                         <p className="font-medium text-white/80">Original Token Address</p>
                         <input className="bg-[#02121d] rounded w-full h-12 px-3 focus:outline-none" placeholder="0xAb..." />

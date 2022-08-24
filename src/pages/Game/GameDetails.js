@@ -21,7 +21,7 @@ const ardmAbi = [
     "function mint(address to, uint256 amount)",
 ];
 
-export default function SingleGame() {
+export default function GameDetails() {
 
     let { gameName } = useParams()
 

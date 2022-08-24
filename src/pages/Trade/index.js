@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from "react-redux"
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, useDisclosure } from '@chakra-ui/react'
 import { MdClear } from 'react-icons/md'
 import { IoCaretDownOutline } from 'react-icons/io5'
@@ -10,6 +11,7 @@ import Footer from '../../components/Footer'
 export default function Trade() {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const account = useSelector(state => state.account)
     
     return (
         <div className="w-full bg-[#02121d]">
@@ -17,13 +19,13 @@ export default function Trade() {
                 <h1 className="text-5xl font-bold">Trade</h1>
                 <p className="text-lg text-white/80">Trade - Swap</p>
             </div>
-            <div className="container mx-auto px-20 py-40 text-white">
+            <div className="xl:container mx-auto xl:px-20 md:px-12 px-4 py-40 text-white">
                 <div className="bg-[#0a1f2f] font-body">
                     <div className="flex items-center font-bold text-4xl h-24 px-6 border-b border-[#02121d]">
-                        Swap
+                        Redeem
                     </div>
-                    <div className="p-6 flex justify-between">
-                        <div className="w-6/12 flex flex-col space-y-8">
+                    <div className="p-6 flex flex-col md:flex-row justify-between md:space-y-6">
+                        <div className="w-full md:w-6/12 flex flex-col space-y-8">
                             <div className="font-body">
                                 <p className="text-white/80 font-semibold text-xl">Total Stack</p>
                                 <p className="text-[#28dbd1] font-bold text-2xl">350.70 BUSD</p>
@@ -60,8 +62,8 @@ export default function Trade() {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-5/12">
-                            <div className="rounded-lg bg-[#061a27] p-6 space-y-4">
+                        <div className="w-full md:w-5/12">
+                            <div className="rounded-lg md:bg-[#061a27] md:p-6 space-y-4">
                                 <div className="relative space-y-2">
                                     <div className="bg-[#02121d] p-4 space-y-6 rounded-lg hover:border-gray-600 border-transparent border cursor-default">
                                         <div onClick={onOpen} className="bg-[#061a27] cursor-pointer hover:bg-[#061a27]/80 w-28 rounded-lg px-2 py-1 flex items-center justify-center space-x-2">
@@ -71,7 +73,7 @@ export default function Trade() {
                                         </div>
                                         <div className="text-white/80 flex items-center justify-between">
                                             <div className="">
-                                                <input className="bg-transparent text-2xl font-medium focus:outline-none" placeholder="0.00" prefix="$" />
+                                                <input className="bg-transparent text-2xl font-medium focus:outline-none w-40" placeholder="0.00" prefix="$" />
                                                 <span>~$1.3903</span>
                                             </div>
                                             <div>Balance: 0</div>
@@ -88,14 +90,14 @@ export default function Trade() {
                                         </div>
                                         <div className="text-white/80 flex items-center justify-between">
                                             <div className="">
-                                                <input className="bg-transparent text-2xl font-medium focus:outline-none" placeholder="0.00" prefix="$" />
+                                                <input className="bg-transparent text-2xl font-medium focus:outline-none w-40" placeholder="0.00" prefix="$" />
                                                 <span>~$1.3903</span>
                                             </div>
                                             <div>Balance: 0</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="py-3 rounded-lg cursor-pointer hover:bg-blue-600 font-semibold text-lg text-center bg-blue-500">Connect to a wallet</div>
+                                <div className="py-3 rounded-lg cursor-pointer hover:bg-blue-600 font-semibold text-lg text-center bg-blue-500">{account ? 'Redeem' : 'Connect to a wallet'}</div>
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ export default function LeaderBoard() {
                 <h1 className="text-5xl font-bold">Leader Board</h1>
                 <p className="text-lg text-white/80">Home - Leader Board</p>
             </div>
-            <div className="container mx-auto px-20 py-40">
+            <div className="xl:container mx-auto xl:px-20 md:px-12 px-4 lg:py-40 py-20">
                 <div className="overflow-x-auto no-scrollbar">
                     <table className='table-fixed w-full overflow-x-auto bg-[#28dbd1]' style={{minWidth: 1200}}>
                         <thead>
